@@ -3,7 +3,7 @@ FROM phusion/baseimage
 RUN apt-get update \
     && apt-get -y install software-properties-common \
 	&& apt-get update \
-	&& add-apt-repository -y ppa:builds/sphinxsearch-beta \
+	&& add-apt-repository -y ppa:builds/sphinxsearch-rel22 \
 	&& apt-get update \
 	&& apt-get -y install sphinxsearch vim \
 	&& mkdir /var/lib/sphinx \
