@@ -1,4 +1,4 @@
 #!/bin/bash
 
-searchd -c /etc/sphinxsearch/sphinxy.conf --nodetach "$@"
+searchd -c /etc/sphinxsearch/sphinx.conf--nodetach "$@"
 

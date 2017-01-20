@@ -11,16 +11,19 @@ RUN apt-get update \
 	&& mkdir /var/log/sphinx \
 	&& mkdir /var/run/sphinx \
 	&& apt-get clean
-ADD indexandsearch.sh /
+ADD index.sh /
+ADD rotate.sh /
+ADD restart.sh /
 ADD searchd.sh /
 ADD lordsearchd.sh /
 
-RUN chmod a+x indexandsearch.sh \
+RUN chmod a+x index.sh \
 	&& chmod a+x searchd.sh \
-	&& chmod a+x lordsearchd.sh
+	&& chmod a+x rotate.sh \
+	&& chmod a+x restart.sh \
+	&& chmod a+x lordsearchd.sh \
+	&& ln -s /searchd.sh /etc/my_init.d/searchd.sh
 
-EXPOSE 3306
+EXPOSE 3306 3312
 
 VOLUME [ "/var/lib/sphinx/data", "/var/log/sphinx" ]
-
-CMD /indexandsearch.sh
