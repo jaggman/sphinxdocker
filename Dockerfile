@@ -24,6 +24,8 @@ RUN chmod a+x index.sh \
 	&& chmod a+x lordsearchd.sh \
 	&& ln -s /searchd.sh /etc/my_init.d/searchd.sh
 
-EXPOSE 3306 3312
+EXPOSE 9306 9312
 
 VOLUME [ "/var/lib/sphinx/data", "/var/log/sphinx" ]
+
+CMD ["/sbin/my_init"]
