@@ -17,11 +17,11 @@ ADD restart.sh /root
 ADD searchd.sh /root
 ADD lordsearchd.sh /root
 
-RUN chmod a+x index.sh \
-	&& chmod a+x searchd.sh \
-	&& chmod a+x rotate.sh \
-	&& chmod a+x restart.sh \
-	&& chmod a+x lordsearchd.sh \
+RUN chmod a+x /root/index.sh \
+	&& chmod a+x /root/searchd.sh \
+	&& chmod a+x /root/rotate.sh \
+	&& chmod a+x /root/restart.sh \
+	&& chmod a+x /root/lordsearchd.sh \
 	&& ln -s /root/searchd.sh /etc/my_init.d/searchd.sh \
 	&& PATH=$PATH:/root
 
