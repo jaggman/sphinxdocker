@@ -5,7 +5,7 @@ RUN apt-get update \
 	&& apt-get update \
 	&& add-apt-repository -y ppa:builds/sphinxsearch-rel22 \
 	&& apt-get update \
-	&& apt-get -y install sphinxsearch vim \
+	&& apt-get -y install sphinxsearch vim mysql-client \
 	&& mkdir /var/lib/sphinx \
 	&& mkdir /var/lib/sphinx/data \
 	&& mkdir /var/log/sphinx \
